@@ -17,7 +17,7 @@ Questo progetto in C++ implementa la sinconizzazione tra produttori e consuamtor
 
 
 ### 🔹 `Consumatore`
--Rappresenta le azioni che il consumatore compie.
+- Rappresenta le azioni che il consumatore compie.
 
 
 ---
