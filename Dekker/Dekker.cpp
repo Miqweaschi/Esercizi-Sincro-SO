@@ -17,12 +17,13 @@ void* process1(void* arg){
                 }
         c1 = 0;
         }
-    }
+   
     std::cout<<"sezione critica: "<<id<<std::endl;
 
     turn = 2;
     
     c1 = 1;
+    }
     }
     return nullptr;
 }
@@ -40,12 +41,13 @@ void* process2(void* arg){
            }
         c2 = 0;
         }
-    }
+    
     std::cout<<"sezione critica: "<<id<<std::endl;
 
     turn = 1;
 
     c2 = 1;
+    }
     }
     return nullptr;
 }
