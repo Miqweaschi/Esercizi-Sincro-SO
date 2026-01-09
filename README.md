@@ -1,4 +1,4 @@
-#Esercizi di Sincronizzazione tra Processi (SO)
+# Esercizi di Sincronizzazione tra Processi (SO)
 Questo repository contiene una collezione di esercizi in C++ focalizzati sui meccanismi di Sincronizzazione e Comunicazione tra Processi (IPC), tipici dei corsi di Sistemi Operativi.
 
 ---
