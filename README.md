@@ -1,23 +1,16 @@
-# Gestione del problema di sinconizzazione Produttore/Consumatore con semafori.
-
-Questo progetto in C++ implementa la sinconizzazione tra produttori e consuamtori mediante 2 semafori e un mutex.
-
----
-
-##  Struttura del progetto
-
-- **`prodCons.cpp`** → contiene dichiarazioni, funzioni e main
+# Esercizi di Sincronizzazione tra Processi (SO)
+Questo repository contiene una collezione di esercizi in C++ focalizzati sui meccanismi di Sincronizzazione e Comunicazione tra Processi (IPC), tipici dei corsi di Sistemi Operativi.
 
 ---
 
-##  Funzioni principali
+## Esercizi Disponibili
 
-### 🔹 `Produttore`
-- Rappresenta le azioni che il produttore compie.
-
-
-### 🔹 `Consumatore`
-- Rappresenta le azioni che il consumatore compie.
-
+- **`cartella ProdCons`** → contiene gli esericizi riguardo al problema Produttori-Consumatori con diversi metodi.
 
 ---
+
+# Requisiti e Compilazione
+Per eseguire gli esercizi è necessario un ambiente Linux o un sottosistema POSIX (come WSL su Windows).
+
+Compilatore
+GCC/G++
