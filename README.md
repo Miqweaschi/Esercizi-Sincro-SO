@@ -6,6 +6,7 @@ Questo repository contiene una collezione di esercizi in C++ focalizzati sui mec
 ## Esercizi Disponibili
 
 - **`cartella ProdCons`** → contiene gli esericizi riguardo al problema Produttori-Consumatori con diversi metodi.
+- **`cartella Dekker`** → contiene il celebre Algoritmo di Dekker, la prima soluzione corretta al problema della mutua esclusione tra due processi.
 
 ---
 
