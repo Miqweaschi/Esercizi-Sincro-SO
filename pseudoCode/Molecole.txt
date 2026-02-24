@@ -1,0 +1,67 @@
+bisogna formare una combinazione completa di 2 atomi di idrogeno e 1 di ossigeno
+ed eseguire la funzione legame(), dopo aver eseguito legame() ciascun thred deve 
+attendere gli altri due prima che qualcuno di loro possa partecipare ad un altro legame
+
+
+Var
+
+ossigeno : integer := 0;
+idrogeno : integer := 0;
+contatore : integer := 0;
+mutex : semaphore := 1;
+Sem_Ossigeno : semaphore := 0;
+Sem_Idrogeno : semaphore := 0;
+barriera_I : semaphore := 0;
+barriera_O : semaphore := 0;
+
+Begin
+PARBEGIN
+	Ossigeno()
+	repeat
+	
+	wait(mutex)
+	ossigeno = ossigeno + 1;
+	if(ossigeno>=1 && idrogeno>=2)
+		ossigeno = ossigeno - 1;			// in questo caso si rilasciano solo 2 molecole di idrogeno perché l'attuale molecola di ossigeno non viene bloccata
+		idrogeno = idrogeno - 2;			// idem per la funzione idrogeno
+		signal(Sem_Idrogeno)
+		signal(Sem_Idrogeno)
+		signal(mutex)
+	else
+		signal(mutex)
+		wait(Sem_Ossigeno)
+
+	(legame)
+		
+	wait(barriera_O)
+	wait(barriera_O)				//qui le molecole di ossigeno attende quella di idrogeno e quando arriva la risveglia
+
+	signal(barriera_I)
+	signal(barriera_I)
+	
+	forever
+
+	
+	Idrogeno()
+	repeat
+	
+	wait(mutex)
+	idrogeno = idrogeno + 1;
+	if(idrogeno>=2 && ossigeno>=1)
+		ossigeno = ossigeno - 1;
+		idrogeno = idrogeno - 2;		
+		signal(Sem_Ossigeno)
+		signal(Sem_Idrogeno)
+		signal(mutex)
+	else
+		signal(mutex)
+		wait(Sem_Idrogeno)
+
+	(legame)
+
+	signal(barriera_O)
+	wait(barriera_I)
+
+	Forever
+PAREND;
+END;
