@@ -7,7 +7,8 @@ Questo repository contiene una collezione di esercizi in C++ focalizzati sui mec
 
 - **`cartella ProdCons`** → contiene gli esericizi riguardo al problema Produttori-Consumatori con diversi metodi.
 - **`cartella Dekker`** → contiene il celebre Algoritmo di Dekker, la prima soluzione corretta al problema della mutua esclusione tra due processi.
-- **`cartella PseudoCode`** → contiene gli esercizi di sincronizzazione scritti in pseudo_codice (credo pascal, ho copiato l'intentazione dalle slide del mio prof. di SO) 
+- **`cartella PseudoCode`** → contiene gli esercizi di sincronizzazione scritti in pseudo_codice (credo pascal, ho copiato l'intentazione dalle slide del mio prof. di SO)
+- **`cartella Scheduling`** → contiene esercizi riguardante lo scheduling dei processi attaverso i vari algoritmi e una cartella apposita per il banchiere.
 ---
 
 # Requisiti e Compilazione
