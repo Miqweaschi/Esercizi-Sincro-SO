@@ -1,0 +1,50 @@
+Abbiamo un insieme di giocatori e giocatrici di tennis in un campo, per giocare a partite miste. Entrambi i generi di tennista attendono in due
+code prima di entrare in campo. Quando una tennista arriva, controlla se c'è un tennista in attesa. Se si, entrano insieme, altrimenti attende.
+Analogamente, quando arriva un tennista, controlla se c'è una tennista in attesa in modo da procedere insieme o attendere. Ogni giocatore può
+invocare gioca() contemporaneamente ad un solo giocatore e viceversa.
+
+var
+	mutex : semaphore := 1;
+	Sem_Giocatrice : semaphore := 0;
+	Sem_Giocatore : sempahore := 0;
+	giocatore : integer := 0;
+	giocatrice : integer := 0;
+
+begin
+Parbegin
+	Giocatore
+	repeat
+	
+	wait(mutex)
+	giocatore = giocatore + 1;
+		if (giocatrice >= 1)
+			giocatore = giocatore - 1;
+			giocatrice = giocatrice - 1;
+			signal(Sem_Giocatrice)
+			signal(mutex)
+		else
+			wait(Sem_Giocatore)
+
+	Gioca();
+	
+	forever
+
+
+	Giocatrice
+	repeat
+	
+	wait(mutex)
+	giocatrice = giocatrice + 1;
+		if (giocatore >= 1)
+			giocatore = giocatore - 1;
+			giocatrice = giocatrice - 1;
+			signal(Sem_Giocatore)
+			signal(mutex)
+		else
+			wait(Sem_Giocatrice)
+
+	Gioca();
+
+	Forever
+Parend;
+End;

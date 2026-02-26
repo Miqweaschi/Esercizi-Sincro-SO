@@ -1,0 +1,39 @@
+In una manifestazione sportiva scolastica di atletica ci sono diversi gruppi di due squadre di atleti, composte
+ciascuna da N mezzofondisti. La gara consiste in una staffetta, dove i corridori di due squadre, chiamiamole A e 
+B devono passarsi un testimone per completare il percorso. Tuttavia, c'è una regola: un corridore della squadra
+A può passare il testimone solo a un corridore della squadra B e viceversa. La gara termina dopo che tutti i 
+corridori hanno completato la staffetta correttamente. Vince la coppia di squadra che impiega meno tempo.
+Utilizzare semafori e mutex per gestire correttamente il passaggio del testimone tra i corridori delle due squadre.
+
+
+var
+	Sem_SquadraB : Semaphore := 1;
+	Sem_SquadraA : Semaphore := 0;
+	testimoneA : integer := 1;
+	testimoneB : integer := 0;
+	mutex : semaphore := 1;
+begin
+parbegin
+	
+	squadraA()
+	repeat
+		wait(Sem_SquadraB)
+		wait(mutex)
+		testimoneA = testimoneA - 1;
+		testimoneB = testimoneB + 1;
+		signal(Sem_SquadraA)
+		signal(mutex)
+	forever
+
+
+	squadraB()
+	repeat
+		wait(Sem_SquadraA)
+		wait(mutex)
+		testimoneB = testimoneB - 1;
+		testimoneA = testimoneA + 1;
+		signal(Sem_SquadraB)
+		signal(mutex)
+	forever
+PAREND;
+END;
